@@ -1,0 +1,16 @@
+apiRequest(1.0)
+local eeObj = getEEObject()
+local emuObj = getEmuObject()
+
+local widescreen = function()
+--gametitle=Fitness Fun (E)(SLES-52983)
+--comment=Widescreen hack
+
+--Widescreen hack 16:9
+
+eeObj.WriteMem32(0x00180234,0x3c013f40)
+eeObj.WriteMem32(0x00180238,0x44810000)
+eeObj.WriteMem32(0x00180240,0x4600c602)
+end
+
+emuObj.AddVsyncHook(widescreen)

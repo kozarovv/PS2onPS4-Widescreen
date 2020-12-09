@@ -1,0 +1,35 @@
+apiRequest(1.0)
+local eeObj = getEEObject()
+local emuObj = getEmuObject()
+
+local widescreen = function()
+--comment=Widescreen hack by ElHecht
+
+-- 16:9
+eeObj.WriteMem32(0x0018cbec,0x3c013f40)
+eeObj.WriteMem32(0x0018cbf0,0x4481f000)
+eeObj.WriteMem32(0x0018cbf4,0x461e6b43)
+eeObj.WriteMem32(0x0018cbf8,0xe7ad0020)
+eeObj.WriteMem32(0x0018cbfc,0xe7ae0030)
+eeObj.WriteMem32(0x0018cc00,0xc7a10010)
+eeObj.WriteMem32(0x0018cc04,0xc7a00020)
+eeObj.WriteMem32(0x0018cc08,0x46000802)
+eeObj.WriteMem32(0x0018cc0c,0x8fa30000)
+eeObj.WriteMem32(0x0018cc10,0xe4600024)
+eeObj.WriteMem32(0x0018cc14,0xc7a00010)
+eeObj.WriteMem32(0x0018cc18,0x8fa30000)
+eeObj.WriteMem32(0x0018cc1c,0xe4600028)
+eeObj.WriteMem32(0x0018cc20,0x3c033faa)
+eeObj.WriteMem32(0x0018cc24,0x3463aaab)
+eeObj.WriteMem32(0x0018cc28,0x44830800)
+eeObj.WriteMem32(0x0018cc2c,0xc7a00030)
+eeObj.WriteMem32(0x0018cc30,0x46010043)
+eeObj.WriteMem32(0x0018cc34,0xc7a00010)
+eeObj.WriteMem32(0x0018cc38,0x46010003)
+eeObj.WriteMem32(0x0018cc3c,0x8fa30000)
+eeObj.WriteMem32(0x0018cc40,0xe460002c)
+eeObj.WriteMem32(0x0018cc44,0x27bd0040)
+eeObj.WriteMem32(0x0018cc48,0x03e00008)
+end
+
+emuObj.AddVsyncHook(widescreen)

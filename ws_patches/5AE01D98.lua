@@ -1,0 +1,58 @@
+apiRequest(1.0)
+local eeObj = getEEObject()
+local emuObj = getEmuObject()
+
+local widescreen = function()
+--comment=Downhill Domination Widescreen Hacks (by Aced14)
+
+--16:9 Widescreen
+
+eeObj.WriteMem32(0x001B9EF0,0x00004401)
+
+--eeObj.WriteMem32(0x0027F500,0x434FC000)
+--eeObj.WriteMem32(0x0027F520,0x3F471C26)
+
+eeObj.WriteMem32(0x001B68F4,0x00004401)
+eeObj.WriteMem32(0x0026C5C0,0x434FC000)
+eeObj.WriteMem32(0x0026C700,0x434FC000)
+eeObj.WriteMem32(0x0026C758,0x434FC000)
+
+eeObj.WriteMem32(0x001F8510,0x00004401)
+eeObj.WriteMem32(0x001F84F8,0x000044D8)
+eeObj.WriteMem32(0x001F84FC,0x0000C000)
+eeObj.WriteMem32(0x00030002,0x00A095D0)
+eeObj.WriteMem32(0x00A095D0,0x3FAA3D71)
+eeObj.WriteMem32(0x00A09610,0x3FAA3D71)
+eeObj.WriteMem32(0x00A60038,0xC2DE0000)
+
+eeObj.WriteMem32(0x0027F0A0,0x3F206D3A)
+
+eeObj.WriteMem32(0x0016BA30,0x0000434F)
+eeObj.WriteMem32(0x0016BA34,0x0000C000)
+eeObj.WriteMem32(0x001A8D4C,0x0000434F)
+eeObj.WriteMem32(0x001A8D50,0x0000C000)
+eeObj.WriteMem32(0x0027ECE0,0x3F471C26)
+
+eeObj.WriteMem32(0x0027EF00,0x43268000)
+eeObj.WriteMem32(0x0027EF20,0x3F471C26)
+eeObj.WriteMem32(0x0027EFC0,0x43268000)
+eeObj.WriteMem32(0x0027EFE0,0x3F471C26)
+
+eeObj.WriteMem32(0x0027ED80,0x434FC000)
+eeObj.WriteMem32(0x0027EDA0,0x3F471C6A)
+eeObj.WriteMem32(0x0027EE40,0x434FC000)
+eeObj.WriteMem32(0x0027EE60,0x3F471C6A)
+
+eeObj.WriteMem32(0x0027F140,0x431D8000)
+eeObj.WriteMem32(0x0027F160,0x3F206D3A)
+eeObj.WriteMem32(0x0027F200,0x431D8000)
+eeObj.WriteMem32(0x0027F220,0x3F206D3A)
+eeObj.WriteMem32(0x0027F2C0,0x431D8000)
+eeObj.WriteMem32(0x0027F2E0,0x3F206D3A)
+eeObj.WriteMem32(0x0027F380,0x431D8000)
+eeObj.WriteMem32(0x0027F3A0,0x3F206D3A)
+
+eeObj.WriteMem32(0x0027ECC0,0x434FC000)
+end
+
+emuObj.AddVsyncHook(widescreen)
