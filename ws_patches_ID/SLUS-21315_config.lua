@@ -1,0 +1,153 @@
+apiRequest(1.0)
+local eeObj = getEEObject()
+local emuObj = getEmuObject()
+
+local widescreen = function()
+--gametitle=50 Cent - Bulletproof (U)(SLUS-21315)
+--comment=Widescreen hack by Arapapa and 60 FPS by asasega
+ 
+--Gameplay 16:9
+
+--X-Fov 4:3 fix
+--e63e013c 1a8b2134 00608144 (2nd)
+--083f013c 83882134 00608144
+eeObj.WriteMem32(0x001eb2a8,0x3c013F08)
+eeObj.WriteMem32(0x001eb2ac,0x34218883)
+
+--X-Fov Wide screen fix
+--80df4426 cc3e013c cdcc2134 00608144
+--80df4426 083f013c 83882134 00608144
+eeObj.WriteMem32(0x001eb2c4,0x3c013F08)
+eeObj.WriteMem32(0x001eb2c8,0x34218883)
+
+--Font's Shadow fix
+--803f013c 00888144 01630246
+--403f013c 00888144 01630246
+eeObj.WriteMem32(0x001583dc,0x3c013f40)
+
+--868c0046 ac00058e (1st)
+eeObj.WriteMem32(0x001583fc,0x0807d6e0)
+
+eeObj.WriteMem32(0x001f5b80,0x3c013f80)
+eeObj.WriteMem32(0x001f5b84,0x44819000)
+eeObj.WriteMem32(0x001f5b88,0x08056100)
+
+--Font fix
+--803f013c 00888144 01030c46
+--403f013c 00888144 01030c46
+eeObj.WriteMem32(0x00158430,0x3c013f40)
+
+--868c0046 ac00058e (2nd)
+eeObj.WriteMem32(0x0015844c,0x0807d6dc)
+
+eeObj.WriteMem32(0x001f5b70,0x3c013f80)
+eeObj.WriteMem32(0x001f5b74,0x44819000)
+eeObj.WriteMem32(0x001f5b78,0x08056114)
+
+--Font fix (Menu)
+
+eeObj.WriteMem32(0x004E9468,0x3f400000)
+eeObj.WriteMem32(0x004E9658,0x3f400000)
+eeObj.WriteMem32(0x004E9700,0x3f400000)
+eeObj.WriteMem32(0x004E97A4,0x3f400000)
+eeObj.WriteMem32(0x004E9848,0x3f400000)
+eeObj.WriteMem32(0x004E98EC,0x3f400000)
+eeObj.WriteMem32(0x004E9990,0x3f400000)
+eeObj.WriteMem32(0x004E9A34,0x3f400000)
+eeObj.WriteMem32(0x004E9AD8,0x3f400000)
+eeObj.WriteMem32(0x004E9B7C,0x3f400000)
+eeObj.WriteMem32(0x004E9C20,0x3f400000)
+eeObj.WriteMem32(0x004E9CC4,0x3f400000)
+eeObj.WriteMem32(0x004E9D68,0x3f400000)
+eeObj.WriteMem32(0x004E9E0C,0x3f400000)
+eeObj.WriteMem32(0x004E9EB0,0x3f400000)
+eeObj.WriteMem32(0x004E9F58,0x3f400000)
+eeObj.WriteMem32(0x004E9FFC,0x3f400000)
+eeObj.WriteMem32(0x004EA0A0,0x3f400000)
+eeObj.WriteMem32(0x004EA144,0x3f400000)
+eeObj.WriteMem32(0x004EA1E8,0x3f400000)
+eeObj.WriteMem32(0x004EA290,0x3f400000)
+eeObj.WriteMem32(0x004EA338,0x3f400000)
+eeObj.WriteMem32(0x004EA3DC,0x3f400000)
+eeObj.WriteMem32(0x004EA480,0x3f400000)
+eeObj.WriteMem32(0x004EA524,0x3f400000)
+eeObj.WriteMem32(0x004EA5C8,0x3f400000)
+eeObj.WriteMem32(0x004EA66C,0x3f400000)
+eeObj.WriteMem32(0x004EA710,0x3f400000)
+eeObj.WriteMem32(0x004EA7B4,0x3f400000)
+eeObj.WriteMem32(0x004EA858,0x3f400000)
+eeObj.WriteMem32(0x004EA8FC,0x3f400000)
+eeObj.WriteMem32(0x004EA9A0,0x3f400000)
+eeObj.WriteMem32(0x004EAA44,0x3f400000)
+eeObj.WriteMem32(0x004EAAE8,0x3f400000)
+eeObj.WriteMem32(0x004EAB8C,0x3f400000)
+eeObj.WriteMem32(0x004EAC30,0x3f400000)
+eeObj.WriteMem32(0x004EACD8,0x3f400000)
+eeObj.WriteMem32(0x004EAD7C,0x3f400000)
+eeObj.WriteMem32(0x004EAE20,0x3f400000)
+eeObj.WriteMem32(0x004EAEC4,0x3f400000)
+eeObj.WriteMem32(0x004EAF68,0x3f400000)
+eeObj.WriteMem32(0x004EB00C,0x3f400000)
+eeObj.WriteMem32(0x004EB0B0,0x3f400000)
+eeObj.WriteMem32(0x004EB1F8,0x3f400000)
+eeObj.WriteMem32(0x004EB29C,0x3f400000)
+eeObj.WriteMem32(0x004EB340,0x3f400000)
+eeObj.WriteMem32(0x004EB3E4,0x3f400000)
+eeObj.WriteMem32(0x004EB488,0x3f400000)
+eeObj.WriteMem32(0x004EB52C,0x3f400000)
+eeObj.WriteMem32(0x004EB5D0,0x3f400000)
+eeObj.WriteMem32(0x004EB674,0x3f400000)
+eeObj.WriteMem32(0x004EB718,0x3f400000)
+eeObj.WriteMem32(0x004EB7BC,0x3f400000)
+eeObj.WriteMem32(0x004EB860,0x3f400000)
+eeObj.WriteMem32(0x004EB904,0x3f400000)
+eeObj.WriteMem32(0x004EB9A8,0x3f400000)
+eeObj.WriteMem32(0x004EBA50,0x3f400000)
+eeObj.WriteMem32(0x004EBAF4,0x3f400000)
+eeObj.WriteMem32(0x004EBB98,0x3f400000)
+eeObj.WriteMem32(0x004EBC3C,0x3f400000)
+eeObj.WriteMem32(0x004EBCE0,0x3f400000)
+eeObj.WriteMem32(0x004EBD84,0x3f400000)
+eeObj.WriteMem32(0x004EBED0,0x3f400000)
+eeObj.WriteMem32(0x004EBF74,0x3f400000)
+eeObj.WriteMem32(0x004EC018,0x3f400000)
+eeObj.WriteMem32(0x004EC0BC,0x3f400000)
+eeObj.WriteMem32(0x004EC160,0x3f400000)
+eeObj.WriteMem32(0x004EC204,0x3f400000)
+eeObj.WriteMem32(0x004EC2A8,0x3f400000)
+eeObj.WriteMem32(0x004EC34C,0x3f400000)
+eeObj.WriteMem32(0x004EC3F0,0x3f400000)
+eeObj.WriteMem32(0x004EC494,0x3f400000)
+eeObj.WriteMem32(0x004EC538,0x3f400000)
+eeObj.WriteMem32(0x004EC5DC,0x3f400000)
+eeObj.WriteMem32(0x004EC680,0x3f400000)
+eeObj.WriteMem32(0x004ECA58,0x3f400000)
+eeObj.WriteMem32(0x004ECBA0,0x3f400000)
+eeObj.WriteMem32(0x004ECC48,0x3f400000)
+eeObj.WriteMem32(0x004ECD98,0x3f400000)
+eeObj.WriteMem32(0x004ED550,0x3f400000)
+eeObj.WriteMem32(0x004ED5F4,0x3f400000)
+eeObj.WriteMem32(0x004ED698,0x3f400000)
+
+--added
+eeObj.WriteMem32(0x004ED0D0,0x3f400000)
+eeObj.WriteMem32(0x004ED174,0x3f400000)
+eeObj.WriteMem32(0x004F9224,0x3f400000)
+
+
+--Yes and No
+eeObj.WriteMem32(0x004F90DC,0x3f400000)
+eeObj.WriteMem32(0x004F9180,0x3f400000)
+
+--60 FPS by asasega (4th)
+--2d20a003 f041013c 00608144
+--2d20a003 7042013c 00608144
+eeObj.WriteMem32(0x001B3B98,0x3C014270)
+
+------------------------------------------
+--Message box Size
+--eeObj.WriteMem32(0x00da4b60,0x3faaaaab)
+
+end
+
+emuObj.AddVsyncHook(widescreen)

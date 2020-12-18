@@ -1,0 +1,16 @@
+apiRequest(1.0)
+local eeObj = getEEObject()
+local emuObj = getEmuObject()
+
+local widescreen = function()
+--gametitle=Power Smash 2 (J)(SLPM-62236)
+--comment=Widescreen hack by Arapapa
+
+--Widescreen hack 16:9
+
+eeObj.WriteMem32(0x002b8254,0x3c013f40)
+eeObj.WriteMem32(0x002b8258,0x44810000)
+eeObj.WriteMem32(0x002b8260,0x4600c602)
+end
+
+emuObj.AddVsyncHook(widescreen)

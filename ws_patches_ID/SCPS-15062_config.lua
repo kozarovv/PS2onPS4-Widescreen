@@ -1,0 +1,59 @@
+apiRequest(1.0)
+local eeObj = getEEObject()
+local emuObj = getEmuObject()
+
+local widescreen = function()
+--gametitle=MTBikers: Bakusou Mountain Bikers (NTSC-J) [SCPS-15062]
+--comment=MTBikers: Bakusou Mountain Bikers Widescreen Hacks (by Aced14)
+
+--16:9 Widescreen
+
+eeObj.WriteMem32(0x001BBF70,0x00004401)
+
+--eeObj.WriteMem32(0x00284FD0,0x434FC000)
+--eeObj.WriteMem32(0x00284FF0,0x3F471C26)
+
+eeObj.WriteMem32(0x001B897C,0x00004401)
+eeObj.WriteMem32(0x0026FBD0,0x434FC000)
+eeObj.WriteMem32(0x0026FD10,0x434FC000)
+eeObj.WriteMem32(0x0026FD68,0x434FC000)
+
+eeObj.WriteMem32(0x001FAE80,0x00004401)
+eeObj.WriteMem32(0x001FAE68,0x000044D8)
+eeObj.WriteMem32(0x001FAE6C,0x0000C000)
+eeObj.WriteMem32(0x00030002,0x00A095D0)
+eeObj.WriteMem32(0x00A095D0,0x3FAA3D71)
+eeObj.WriteMem32(0x00A09610,0x3FAA3D71)
+eeObj.WriteMem32(0x00A60168,0xC2DE0000)
+
+eeObj.WriteMem32(0x00284B70,0x3F206D3A)
+
+eeObj.WriteMem32(0x0016C6B0,0x0000434F)
+eeObj.WriteMem32(0x0016C6B4,0x0000C000)
+eeObj.WriteMem32(0x001AAD1C,0x0000434F)
+eeObj.WriteMem32(0x001AAD20,0x0000C000)
+eeObj.WriteMem32(0x002847B0,0x3F471C26)
+
+eeObj.WriteMem32(0x002849D0,0x43268000)
+eeObj.WriteMem32(0x002849F0,0x3F471C26)
+eeObj.WriteMem32(0x00284A90,0x43268000)
+eeObj.WriteMem32(0x00284AB0,0x3F471C26)
+
+eeObj.WriteMem32(0x00284850,0x434FC000)
+eeObj.WriteMem32(0x00284870,0x3F471C6A)
+eeObj.WriteMem32(0x00284910,0x434FC000)
+eeObj.WriteMem32(0x00284930,0x3F471C6A)
+
+eeObj.WriteMem32(0x00284C10,0x431D8000)
+eeObj.WriteMem32(0x00284C30,0x3F206D3A)
+eeObj.WriteMem32(0x00284CD0,0x431D8000)
+eeObj.WriteMem32(0x00284CF0,0x3F206D3A)
+eeObj.WriteMem32(0x00284D90,0x431D8000)
+eeObj.WriteMem32(0x00284DB0,0x3F206D3A)
+eeObj.WriteMem32(0x00284E50,0x431D8000)
+eeObj.WriteMem32(0x00284E70,0x3F206D3A)
+
+eeObj.WriteMem32(0x00284790,0x434FC000)
+end
+
+emuObj.AddVsyncHook(widescreen)

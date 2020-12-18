@@ -1,0 +1,56 @@
+apiRequest(1.0)
+local eeObj = getEEObject()
+local emuObj = getEmuObject()
+
+local widescreen = function()
+--gametitle= Tokyo Extreme Racer - Zero (NTSC) (SLUS-20189)
+--comment= Widescreen Hack by VIRGIN KLM
+
+-- 16:9 - 3D Elements
+eeObj.WriteMem32(0x00748364,0x3F400000)
+
+-- 16:9 - Gameplay HUD
+eeObj.WriteMem32(0x0032DC70,0x3F400000)
+eeObj.WriteMem32(0x0032DCA0,0x00000210)
+eeObj.WriteMem32(0x0032DCB8,0x3F400000)
+eeObj.WriteMem32(0x0032DD78,0x00000200)
+eeObj.WriteMem32(0x0032DD90,0x3F400000)
+eeObj.WriteMem32(0x0032DDC0,0x0000022E)
+eeObj.WriteMem32(0x0032DDD8,0x3F400000)
+eeObj.WriteMem32(0x0032DE08,0x000001F5)
+eeObj.WriteMem32(0x0032DE20,0x3F400000)
+eeObj.WriteMem32(0x0032DE50,0x00000208)
+eeObj.WriteMem32(0x0032DE68,0x3F400000)
+eeObj.WriteMem32(0x0032DE98,0x0000021B)
+eeObj.WriteMem32(0x0032DEB0,0x3F400000)
+eeObj.WriteMem32(0x0032DEF8,0x3F400000)
+eeObj.WriteMem32(0x0032E330,0x3F400000)
+eeObj.WriteMem32(0x0032E378,0x3F400000)
+eeObj.WriteMem32(0x0032E3C0,0x3F400000)
+eeObj.WriteMem32(0x0032E408,0x3F400000)
+eeObj.WriteMem32(0x0032E450,0x3F400000)
+eeObj.WriteMem32(0x0032E498,0x3F400000)
+eeObj.WriteMem32(0x0032E4E0,0x3F400000)
+eeObj.WriteMem32(0x0032E528,0x3F400000)
+eeObj.WriteMem32(0x0032E570,0x3F400000)
+eeObj.WriteMem32(0x0032E5B8,0x3F400000)
+eeObj.WriteMem32(0x0032E600,0x3F400000)
+eeObj.WriteMem32(0x0032E960,0x3F400000)
+eeObj.WriteMem32(0x0032E9A8,0x3F400000)
+eeObj.WriteMem32(0x0032E9F0,0x3F400000)
+eeObj.WriteMem32(0x0032EA38,0x3F400000)
+eeObj.WriteMem32(0x0032EA80,0x3F400000)
+eeObj.WriteMem32(0x0032EAC8,0x3F400000)
+eeObj.WriteMem32(0x0032EB10,0x3F400000)
+eeObj.WriteMem32(0x0032EB58,0x3F400000)
+eeObj.WriteMem32(0x0032EBA0,0x3F400000)
+eeObj.WriteMem32(0x0032EBE8,0x3F400000)
+
+
+
+--Menu (Car)
+--00 00 80 3F D9 EE 6E 3F 00 08 00 00 00 08 00 00 00 00 80 3F 00 24 74 4B 00 00 80 3F 00 00 FA 43
+eeObj.WriteMem32(0x00740294,0x3F400000)
+end
+
+emuObj.AddVsyncHook(widescreen)
