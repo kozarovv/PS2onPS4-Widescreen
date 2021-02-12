@@ -6,7 +6,7 @@ local widescreen = function()
 --comment=Widescreen hack by nemesis2000 (pnach by nemesis2000)
 
 --gameplay
-eeObj.WriteMem32(0x006ec304,0x23c013f4)
+eeObj.WriteMem32(0x006ec304,0x3c013f40)
 eeObj.WriteMem32(0x006ec308,0x44810000)
 eeObj.WriteMem32(0x006ec310,0x4600c602)
 
